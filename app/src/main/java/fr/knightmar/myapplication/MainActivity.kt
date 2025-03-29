@@ -23,6 +23,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
+
+
 
 
 
@@ -65,10 +71,10 @@ fun CustomDialog(showDialog: Boolean, onDismiss: () -> Unit) {
     if (showDialog) {
         AlertDialog(
             title = {
-                Text(text = "Titre du Pop-Up")
+                Text(text = myAnnotatedString1)
             },
             text = {
-                Text(text = "Texte du Pop-Up")
+                Text(text = myAnnotatedString2)
             },
             onDismissRequest = { }, // Appel correct de la fermeture du dialogue
             confirmButton = {
@@ -92,6 +98,21 @@ fun CustomDialog(showDialog: Boolean, onDismiss: () -> Unit) {
     }
 }
 
+val myAnnotatedString1 = buildAnnotatedString {
+    append("Texte avec un ")
+    withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
+        append("mot en gras")
+    }
+    append(".")
+}
+
+val myAnnotatedString2 = buildAnnotatedString {
+    append("Titre avec un ")
+    withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
+        append("mot en gras")
+    }
+    append(".")
+}
 
 
 @Composable
