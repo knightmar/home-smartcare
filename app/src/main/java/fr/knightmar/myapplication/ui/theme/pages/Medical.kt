@@ -29,7 +29,7 @@ import fr.knightmar.myapplication.R
 
 
 @Composable
-fun JustDance(navController: NavHostController) {
+fun Medical(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize() // Remplit tout l'écran
@@ -60,13 +60,20 @@ fun JustDance(navController: NavHostController) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.fleche_gauche_black_raisin),
+                        painter = painterResource(id = R.drawable.logo_suivi_med),
                         contentDescription = "Bouton aller à gauche",
-                        modifier = Modifier.size(250.dp)
+                        modifier = Modifier.size(350.dp).padding(30.dp)
                     )
                     Text(
-                        "Précédent",
-                        fontSize = 40.sp, // Augmente la taille du texte
+                        "Données",
+                        fontSize = 50.sp, // Augmente la taille du texte
+                        fontWeight = FontWeight.Bold, // Rend le texte plus visible
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(top = 40.dp)
+                    )
+                    Text(
+                        "Médical",
+                        fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
                         textAlign = TextAlign.Center
                     )
