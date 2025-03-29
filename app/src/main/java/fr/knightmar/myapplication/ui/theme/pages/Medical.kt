@@ -101,13 +101,7 @@ fun Medical(navController: NavHostController) {
                         modifier = Modifier.size(400.dp)
                     )
                     Text(
-                        "Application",
-                        fontSize = 50.sp, // Augmente la taille du texte
-                        fontWeight = FontWeight.Bold, // Rend le texte plus visible
-                        textAlign = TextAlign.Center
-                    )
-                    Text(
-                        "Cardiologue",
+                        "Téléconsultation",
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
                         textAlign = TextAlign.Center
