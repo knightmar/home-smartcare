@@ -18,6 +18,7 @@ import fr.knightmar.myapplication.ui.theme.pages.DaughterCall
 import fr.knightmar.myapplication.ui.theme.pages.DoctorCall
 import fr.knightmar.myapplication.ui.theme.pages.HomeScreen
 import fr.knightmar.myapplication.ui.theme.pages.JustDance
+import fr.knightmar.myapplication.ui.theme.pages.Medical
 
 
 class MainActivity : ComponentActivity() {
@@ -41,15 +42,8 @@ fun Main() {
         composable("daughterCall") { DaughterCall(navController) }
         composable("homeScreen") { HomeScreen(navController) }
         composable("doctorCall") { DoctorCall(navController) }
-        composable("justDance") {
-            Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                JustDance(
-                    navController,
-                    modifier = Modifier
-                        .padding(innerPadding)
-                        .padding(10.dp)
-                )
-            }
-        }
+        composable("justDance") { JustDance(navController) }
+        composable("Medical") { Medical(navController) }
     }
 }
+

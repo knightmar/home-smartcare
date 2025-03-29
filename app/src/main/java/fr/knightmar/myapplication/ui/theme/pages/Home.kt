@@ -231,7 +231,7 @@ fun HomeScreen(navHostController: NavHostController) {
             }
 
             Button(
-                onClick = { navHostController.navigate("justDance") },
+                onClick = { navHostController.navigate("Medical") },
                 modifier = Modifier
                     .padding(8.dp)
                     .weight(1f)
@@ -247,7 +247,7 @@ fun HomeScreen(navHostController: NavHostController) {
 
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Image(
-                        painter = painterResource(id = R.drawable.logo_suivi_med),
+                        painter = painterResource(id = R.drawable.logo_mallette_medicale),
                         contentDescription = "Button image",
                         modifier = Modifier.size(200.dp)
                     )
