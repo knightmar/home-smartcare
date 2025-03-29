@@ -49,7 +49,7 @@ fun JustDance(navController: NavHostController) {
                     .fillMaxHeight(), // Chaque bouton prend toute la hauteur
                 shape = RectangleShape,
                 colors = ButtonColors(
-                    containerColor = Color(0xFFA9DEF9),
+                    containerColor = Color.Transparent,
                     contentColor = Color.Black,
                     disabledContainerColor = Color.Cyan,
                     disabledContentColor = Color.White
