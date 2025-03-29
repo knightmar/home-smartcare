@@ -12,36 +12,97 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import fr.knightmar.myapplication.ui.theme.MyApplicationTheme
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContent {
             MyApplicationTheme {
+                // Gérer l'état pour afficher la pop-up
+                var showDialog by remember { mutableStateOf(false) }
+
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Column(
+                        modifier = Modifier
+                            .padding(innerPadding)
+                            .fillMaxSize(),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center,
+
+                    ) {
+                        // Ajouter un bouton pour afficher le Dialog
+                        Button(onClick = { showDialog = true }) {
+                            Text("Ouvrir la pop-up")
+                        }
+
+                        // Intégrer le CustomDialog
+                        CustomDialog(showDialog = showDialog, onDismiss = { showDialog = false })
+                    }
                 }
             }
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun CustomDialog(showDialog: Boolean, onDismiss: () -> Unit) {
+    if (showDialog) {
+        AlertDialog(
+            title = {
+                Text(text = "Titre du Pop-Up")
+            },
+            text = {
+                Text(text = "Texte du Pop-Up")
+            },
+            onDismissRequest = { }, // Appel correct de la fermeture du dialogue
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        onDismiss() // Fermeture du dialogue
+                        println("Confirmation registered") // Log de confirmation
+                    }
+                ) {
+                    Text("Confirmer")
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = onDismiss // Fermeture directe
+                ) {
+                    Text("Annuler")
+                }
+            }
+        )
+    }
+}
+
+
+
+@Composable
+fun AlertDialogExample(onDismissRequest: () -> Unit, onConfirmation: () -> Unit, dialogTitle: String, dialogText: String, icon: Any) {
+
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun PreviewCustomDialog() {
     MyApplicationTheme {
-        Greeting("Test")
+        CustomDialog(showDialog = true, onDismiss = {})
     }
 }
