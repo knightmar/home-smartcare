@@ -77,7 +77,7 @@ fun Medical(navController: NavHostController) {
                         fontFamily = fontFamily
                     )
                     Text(
-                        "Médical",
+                        "Médicales",
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
                         textAlign = TextAlign.Center,
@@ -86,7 +86,7 @@ fun Medical(navController: NavHostController) {
                 }
             }
             Button(
-                onClick = { /* Action bouton 2 */ },
+                onClick = { navController.navigate("doctorCall") },
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxHeight(),
@@ -104,14 +104,15 @@ fun Medical(navController: NavHostController) {
                     Image(
                         painter = painterResource(id = R.drawable.tel_com_logo),
                         contentDescription = "LogoAppliCardiologue",
-                        modifier = Modifier.size(400.dp)
+                        modifier = Modifier.size(330.dp)
                     )
                     Text(
                         "Télé-",
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
                         textAlign = TextAlign.Center,
-                        fontFamily = fontFamily
+                        fontFamily = fontFamily,
+                        modifier = Modifier.padding(top = 25.dp)
                     )
                     Text("consultation",
                         fontSize = 50.sp, // Augmente la taille du texte
@@ -143,11 +144,11 @@ fun Medical(navController: NavHostController) {
                         modifier = Modifier.size(280.dp).padding(10.dp)
                     )
                     Text(
-                        "Application",
+                        "Applications",
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(top = 60.dp),
+                        modifier = Modifier.padding(top = 90.dp),
                         fontFamily = fontFamily
                     )
                 }

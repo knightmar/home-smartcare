@@ -69,7 +69,8 @@ fun HomeScreen(navHostController: NavHostController) {
                 onClick = {},
                 modifier = Modifier
                     .padding(8.dp)
-                    .weight(1f),
+                    .weight(1f)
+                    .height(350.dp),
                 shape = RectangleShape,
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(0xFFD3F8E2),
@@ -188,7 +189,7 @@ fun HomeScreen(navHostController: NavHostController) {
                     )
 
                     Text(
-                        text = "Urgence",
+                        text = "Urgences",
                         fontSize = 50.sp,
                         modifier = Modifier.padding(top = 40.dp),
                         fontFamily = fontFamily

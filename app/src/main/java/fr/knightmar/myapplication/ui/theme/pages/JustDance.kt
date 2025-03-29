@@ -106,7 +106,7 @@ fun JustDance(navController: NavHostController) {
                         fontFamily = fontFamily
                     )
                     Text(
-                        "Cardiologue",
+                        "Cardiologie",
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
                         textAlign = TextAlign.Center,

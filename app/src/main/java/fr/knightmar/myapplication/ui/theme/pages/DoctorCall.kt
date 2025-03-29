@@ -60,19 +60,19 @@ fun DoctorCall(navController: NavController) {
             contentAlignment = Alignment.BottomCenter
         ) {
             Image(
-                painter = painterResource(id = R.drawable.call_ui_daughter),
+                painter = painterResource(id = R.drawable.call_ui_doctor),
                 contentDescription = "Incoming Call",
                 Modifier.size(height = 700.dp, width = 700.dp)
                 // CHnage size
             )
 
             Button(
-                onClick = { showDialog = true },
+                onClick = { navController.navigate("Medical")},
                 modifier = Modifier
                     .padding(bottom = 5.dp)
                     .width(210.dp)
                     .height(50.dp),
-                colors = ButtonDefaults.buttonColors(Color(0xFFDB5910))
+                colors = ButtonDefaults.buttonColors(Color(0xFF272F66))
             ) {
                 Text(
                     "Raccrocher",
