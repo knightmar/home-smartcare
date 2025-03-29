@@ -86,35 +86,6 @@ fun Medical(navController: NavHostController) {
                     .fillMaxHeight(),
                 shape = RectangleShape,
                 colors = ButtonColors(
-                    containerColor = Color(0xFFABDDF8),
-                    contentColor = Color.Black,
-                    disabledContainerColor = Color.Cyan,
-                    disabledContentColor = Color.White
-                )
-            ) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.logo_cardiologue),
-                        contentDescription = "LogoAppliCardiologue",
-                        modifier = Modifier.size(400.dp)
-                    )
-                    Text(
-                        "Téléconsultation",
-                        fontSize = 50.sp, // Augmente la taille du texte
-                        fontWeight = FontWeight.Bold, // Rend le texte plus visible
-                        textAlign = TextAlign.Center
-                    )
-                }
-            }
-            Button(
-                onClick = { /* Action bouton 3 */ },
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxHeight(),
-                shape = RectangleShape,
-                colors = ButtonColors(
                     containerColor = Color.Transparent,
                     contentColor = Color.Black,
                     disabledContainerColor = Color.Cyan,
@@ -125,15 +96,50 @@ fun Medical(navController: NavHostController) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.fleche_droite_black_raisin),
-                        contentDescription = "Bouton aller à gauche",
-                        modifier = Modifier.size(250.dp)
+                        painter = painterResource(id = R.drawable.tel_com_logo),
+                        contentDescription = "LogoAppliCardiologue",
+                        modifier = Modifier.size(400.dp)
                     )
                     Text(
-                        "Suivant",
-                        fontSize = 40.sp, // Augmente la taille du texte
+                        "Télé-",
+                        fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
                         textAlign = TextAlign.Center
+                    )
+                    Text("consultation",
+                        fontSize = 50.sp, // Augmente la taille du texte
+                        fontWeight = FontWeight.Bold, // Rend le texte plus visible
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
+            Button(
+                onClick = { navController.navigate("JustDance") },
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxHeight(),
+                shape = RectangleShape,
+                colors = ButtonColors(
+                    containerColor = Color((0xFFABDDF8)),
+                    contentColor = Color.Black,
+                    disabledContainerColor = Color.Cyan,
+                    disabledContentColor = Color.White
+                )
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.cathalogue_application),
+                        contentDescription = "Bouton aller à gauche",
+                        modifier = Modifier.size(280.dp).padding(10.dp)
+                    )
+                    Text(
+                        "Application",
+                        fontSize = 50.sp, // Augmente la taille du texte
+                        fontWeight = FontWeight.Bold, // Rend le texte plus visible
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(top = 60.dp)
                     )
                 }
             }

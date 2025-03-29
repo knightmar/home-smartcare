@@ -40,10 +40,11 @@ fun DaughterCall(navController: NavController) {
                 painter = painterResource(id = R.drawable.call_ui_daughter),
                 contentDescription = "Incoming Call"
             )
+            Button(onClick = { navController.navigate("homeScreen") }) {
+                Text("Racrocher") //, modifier = Modifier.padding(top = 40.dp))
+            }
         }
 
-        Button(onClick = { navController.navigate("homeScreen") }) {
-            Text("Racrocher") //, modifier = Modifier.padding(top = 40.dp))
-        }
+
     }
 }
