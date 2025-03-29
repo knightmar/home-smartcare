@@ -253,7 +253,7 @@ fun HomeScreen(navHostController: NavHostController) {
                     )
 
                     Text(
-                        text = "Suivi Médical",
+                        text = "Médical",
                         fontSize = 50.sp,
                         modifier = Modifier.padding(top = 40.dp),
                         fontFamily = fontFamily
@@ -262,51 +262,5 @@ fun HomeScreen(navHostController: NavHostController) {
 
             }
         }
-
-
-        /*
-        for (rowIndex in 0 until 2) { // 3 columns
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceEvenly
-            ) {
-                for (columnIndex in 0 until 3) { // 2 rows
-                    Button(
-                        onClick = { /* TODO */ },
-                        modifier = Modifier
-                            .padding(8.dp)
-                            .weight(1f)
-                            .height(350.dp),
-                        shape = RectangleShape,
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = colors[index],
-                            contentColor = Color.Black,
-                            disabledContainerColor = colors[index],
-                            disabledContentColor = Color.Black
-                        )
-                    ) {
-
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            Image(
-                                painter = painterResource(id = logos[index]),
-                                contentDescription = "Button image",
-                                modifier = Modifier.size(200.dp)
-                            )
-
-                            Text(
-                                text = text_buttons[index],
-                                fontSize = 50.sp,
-                                modifier = Modifier.padding(top = 40.dp),
-                                fontFamily = fontFamily
-                            )
-                        }
-
-                    }
-
-                    index++;
-                }
-            }
-        }
-        */
     }
 }

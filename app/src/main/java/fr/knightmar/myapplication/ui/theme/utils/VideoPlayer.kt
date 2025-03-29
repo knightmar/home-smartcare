@@ -37,6 +37,6 @@ fun VideoPlayer(context: Context, videoResId: Int) {
                 playerView.player = player
             }
         },
-        modifier = Modifier.size(200.dp)
+        modifier = Modifier.size(700.dp)
     )
 }

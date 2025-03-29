@@ -138,7 +138,7 @@ fun JustDance(navController: NavHostController, modifier: Modifier = Modifier) {
             }
         }
         Button(
-            onClick = { /* Action du bouton en bas */ },
+            onClick = { navController.navigate("homeScreen") },
             modifier = Modifier
                 .fillMaxWidth() // Occupe toute la largeur
                 .height(80.dp) // Augmente la hauteur du bouton
