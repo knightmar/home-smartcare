@@ -24,7 +24,7 @@ fun DoctorCall(navController: NavController) {
     ) {
         VideoPlayer(
             context = LocalContext.current,
-            videoResId = R.raw.video
+            videoResId = R.raw.call_daughter
         )
         Button(onClick = {navController.navigate("homeScreen")}){
             Text("Racrocher", modifier = Modifier.padding(top = 40.dp),)
