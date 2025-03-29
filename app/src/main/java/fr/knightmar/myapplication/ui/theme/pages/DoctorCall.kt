@@ -10,6 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import fr.knightmar.myapplication.R
@@ -17,6 +19,8 @@ import fr.knightmar.myapplication.ui.theme.utils.VideoPlayer
 
 @Composable
 fun DoctorCall(navController: NavController) {
+    val fontFamily = FontFamily(Font(R.font.luciole_regular))
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -27,7 +31,7 @@ fun DoctorCall(navController: NavController) {
             videoResId = R.raw.call_daughter
         )
         Button(onClick = { navController.navigate("homeScreen") }) {
-            Text("Racrocher", modifier = Modifier.padding(top = 40.dp))
+            Text("Racrocher", modifier = Modifier.padding(top = 40.dp), fontFamily = fontFamily)
         }
     }
 }

@@ -20,6 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -30,6 +32,8 @@ import fr.knightmar.myapplication.R
 
 @Composable
 fun JustDance(navController: NavHostController) {
+    val fontFamily = FontFamily(Font(R.font.luciole_regular))
+
     Column(
         modifier = Modifier
             .fillMaxSize() // Remplit tout l'écran
@@ -68,7 +72,8 @@ fun JustDance(navController: NavHostController) {
                         "Précédent",
                         fontSize = 40.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
-                        textAlign = TextAlign.Center
+                        textAlign = TextAlign.Center,
+                        fontFamily = fontFamily
                     )
                 }
             }
@@ -97,13 +102,15 @@ fun JustDance(navController: NavHostController) {
                         "Application",
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
-                        textAlign = TextAlign.Center
+                        textAlign = TextAlign.Center,
+                        fontFamily = fontFamily
                     )
                     Text(
                         "Cardiologue",
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
-                        textAlign = TextAlign.Center
+                        textAlign = TextAlign.Center,
+                        fontFamily = fontFamily
                     )
                 }
             }
@@ -132,7 +139,8 @@ fun JustDance(navController: NavHostController) {
                         "Suivant",
                         fontSize = 40.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
-                        textAlign = TextAlign.Center
+                        textAlign = TextAlign.Center,
+                        fontFamily = fontFamily
                     )
                 }
             }
@@ -154,7 +162,8 @@ fun JustDance(navController: NavHostController) {
             Text(
                 "Retour à l'Accueil",
                 fontSize = 40.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                fontFamily = fontFamily
             )
         }
     }

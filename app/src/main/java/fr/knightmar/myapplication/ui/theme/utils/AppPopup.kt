@@ -16,9 +16,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.navigation.NavController
+import fr.knightmar.myapplication.R
 
 
 //Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -45,12 +48,14 @@ import androidx.navigation.NavController
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomDialog(navController: NavController, showDialog: Boolean, onDismiss: () -> Unit) {
+    val fontFamily = FontFamily(Font(R.font.luciole_regular))
+
     if (showDialog) {
         val context = LocalContext.current // Capture context outside lambda
 
         AlertDialog(
-            title = { Text(text = "Title") },
-            text = { Text(text = "This is a test dialog.") },
+            title = { Text(text = "Title", fontFamily = fontFamily) },
+            text = { Text(text = "This is a test dialog.", fontFamily = fontFamily) },
             onDismissRequest = { },
             confirmButton = {
                 TextButton(
@@ -60,14 +65,14 @@ fun CustomDialog(navController: NavController, showDialog: Boolean, onDismiss: (
                         navController.navigate("justDance")
                     }
                 ) {
-                    Text("Confirmer")
+                    Text("Confirmer" , fontFamily = fontFamily)
                 }
             },
             dismissButton = {
                 TextButton(
                     onClick = onDismiss
                 ) {
-                    Text("Annuler")
+                    Text("Annuler" , fontFamily = fontFamily)
                 }
             }
         )

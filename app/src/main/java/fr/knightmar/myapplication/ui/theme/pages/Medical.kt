@@ -20,6 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -30,6 +32,8 @@ import fr.knightmar.myapplication.R
 
 @Composable
 fun Medical(navController: NavHostController) {
+    val fontFamily = FontFamily(Font(R.font.luciole_regular))
+
     Column(
         modifier = Modifier
             .fillMaxSize() // Remplit tout l'écran
@@ -69,13 +73,15 @@ fun Medical(navController: NavHostController) {
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(top = 40.dp)
+                        modifier = Modifier.padding(top = 40.dp),
+                        fontFamily = fontFamily
                     )
                     Text(
                         "Médical",
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
-                        textAlign = TextAlign.Center
+                        textAlign = TextAlign.Center,
+                        fontFamily = fontFamily
                     )
                 }
             }
@@ -104,12 +110,14 @@ fun Medical(navController: NavHostController) {
                         "Télé-",
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
-                        textAlign = TextAlign.Center
+                        textAlign = TextAlign.Center,
+                        fontFamily = fontFamily
                     )
                     Text("consultation",
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
-                        textAlign = TextAlign.Center
+                        textAlign = TextAlign.Center,
+                        fontFamily = fontFamily
                     )
                 }
             }
@@ -139,7 +147,8 @@ fun Medical(navController: NavHostController) {
                         fontSize = 50.sp, // Augmente la taille du texte
                         fontWeight = FontWeight.Bold, // Rend le texte plus visible
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(top = 60.dp)
+                        modifier = Modifier.padding(top = 60.dp),
+                        fontFamily = fontFamily
                     )
                 }
             }
@@ -161,7 +170,8 @@ fun Medical(navController: NavHostController) {
             Text(
                 "Retour à l'Accueil",
                 fontSize = 40.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                fontFamily = fontFamily
             )
         }
     }

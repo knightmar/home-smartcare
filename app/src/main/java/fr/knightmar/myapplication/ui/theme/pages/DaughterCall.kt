@@ -17,6 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import fr.knightmar.myapplication.R
@@ -25,6 +27,9 @@ import fr.knightmar.myapplication.ui.theme.utils.VideoPlayer
 
 @Composable
 fun DaughterCall(navController: NavController) {
+    val fontFamily = FontFamily(Font(R.font.luciole_regular))
+
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -56,7 +61,7 @@ fun DaughterCall(navController: NavController) {
         Button(onClick = {
             showDialog = true
         }) {
-            Text("Racrocher") //, modifier = Modifier.padding(top = 40.dp))
+            Text("Racrocher", fontFamily = fontFamily) //, modifier = Modifier.padding(top = 40.dp))
         }
     }
 }
