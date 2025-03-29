@@ -23,6 +23,9 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Color
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.sp
 
 
 class MainActivity : ComponentActivity() {
@@ -69,19 +72,50 @@ fun JustDance(modifier: Modifier = Modifier) {
                 )
 
             ) {
-                Image(
-                    painter = painterResource(id = R.)
-                )
-                Text("Bouton 1")
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.fleche_gauche_black_raisin),
+                        contentDescription = "Bouton aller à gauche",
+                        modifier = Modifier.size(250.dp)
+                    )
+                    Text("Précédent",
+                        fontSize = 40.sp, // Augmente la taille du texte
+                        fontWeight = FontWeight.Bold, // Rend le texte plus visible
+                        textAlign = TextAlign.Center)
+                }
             }
             Button(
                 onClick = { /* Action bouton 2 */ },
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxHeight(),
-                shape = RectangleShape
+                shape = RectangleShape,
+                colors = ButtonColors(
+                    containerColor = Color(0xFFABDDF8),
+                    contentColor = Color.Black,
+                    disabledContainerColor = Color.Cyan,
+                    disabledContentColor = Color.White
+            )
             ) {
-                Text("Bouton 2")
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.logo_cardiologue),
+                        contentDescription = "LogoAppliCardiologue",
+                        modifier = Modifier.size(400.dp)
+                    )
+                    Text("Application",
+                        fontSize = 50.sp, // Augmente la taille du texte
+                        fontWeight = FontWeight.Bold, // Rend le texte plus visible
+                        textAlign = TextAlign.Center)
+                    Text("Cardiologue",
+                        fontSize = 50.sp, // Augmente la taille du texte
+                        fontWeight = FontWeight.Bold, // Rend le texte plus visible
+                        textAlign = TextAlign.Center)
+                }
             }
             Button(
                 onClick = { /* Action bouton 3 */ },
@@ -96,8 +130,40 @@ fun JustDance(modifier: Modifier = Modifier) {
                     disabledContentColor = Color.White
             )
             ) {
-                Text("Bouton 3")
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.fleche_droite_black_raisin),
+                        contentDescription = "Bouton aller à gauche",
+                        modifier = Modifier.size(250.dp)
+                    )
+                    Text("Suivant",
+                        fontSize = 40.sp, // Augmente la taille du texte
+                        fontWeight = FontWeight.Bold, // Rend le texte plus visible
+                        textAlign = TextAlign.Center)
+                }
             }
+        }
+        Button(
+            onClick = { /* Action du bouton en bas */ },
+            modifier = Modifier
+                .fillMaxWidth() // Occupe toute la largeur
+                .height(80.dp) // Augmente la hauteur du bouton
+                .align(Alignment.CenterHorizontally), // Centre le bouton horizontalement
+            shape = RectangleShape, // Bords arrondis
+            colors = ButtonColors(
+                containerColor = Color(0xFF282828), // Vert pour bien le distinguer
+                contentColor = Color.White,
+                disabledContainerColor = Color.Cyan,
+                disabledContentColor = Color.White
+            )
+        ) {
+            Text(
+                "Retour à l'Accueil",
+                fontSize = 40.sp,
+                fontWeight = FontWeight.Bold
+            )
         }
     }
 }
