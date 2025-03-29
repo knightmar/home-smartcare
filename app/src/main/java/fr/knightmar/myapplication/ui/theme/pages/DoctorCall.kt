@@ -46,6 +46,13 @@ fun DoctorCall(navController: NavController) {
             videoResId = R.raw.call_daughter
         )
 
+        var showDialog by remember { mutableStateOf(false) }
+        CustomDialog(
+            showDialog = showDialog,
+            onDismiss = { showDialog = false },
+            navController = navController
+        )
+
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -55,30 +62,24 @@ fun DoctorCall(navController: NavController) {
             Image(
                 painter = painterResource(id = R.drawable.call_ui_daughter),
                 contentDescription = "Incoming Call",
-                Modifier.size(height = 700.dp, width = 400.dp)
+                Modifier.size(height = 700.dp, width = 700.dp)
                 // CHnage size
             )
-        }
-        var showDialog by remember { mutableStateOf(false) }
 
-        CustomDialog(
-            showDialog = showDialog,
-            onDismiss = { showDialog = false },
-            navController = navController
-        )
-        Button(
-            onClick = { showDialog = true },
-            modifier = Modifier
-                .padding(bottom = 25.dp)
-                .width(210.dp)
-                .height(50.dp),
-            colors = ButtonDefaults.buttonColors(Color(0xFFDB5910))
-        ) {
-            Text(
-                "Raccrocher",
-                fontFamily = fontFamily,
-                fontSize = 25.sp,
-            ) //, modifier = Modifier.padding(top = 40.dp))
+            Button(
+                onClick = { showDialog = true },
+                modifier = Modifier
+                    .padding(bottom = 5.dp)
+                    .width(210.dp)
+                    .height(50.dp),
+                colors = ButtonDefaults.buttonColors(Color(0xFFDB5910))
+            ) {
+                Text(
+                    "Raccrocher",
+                    fontFamily = fontFamily,
+                    fontSize = 25.sp,
+                ) //, modifier = Modifier.padding(top = 40.dp))
+            }
         }
     }
 }
