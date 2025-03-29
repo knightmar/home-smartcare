@@ -15,6 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import fr.knightmar.myapplication.ui.theme.MyApplicationTheme
 import fr.knightmar.myapplication.ui.theme.pages.DaughterCall
+import fr.knightmar.myapplication.ui.theme.pages.DoctorCall
 import fr.knightmar.myapplication.ui.theme.pages.HomeScreen
 import fr.knightmar.myapplication.ui.theme.pages.JustDance
 
@@ -39,6 +40,7 @@ fun Main() {
         composable("incomingCall") { IncomingCall(navController) }
         composable("daughterCall") { DaughterCall(navController) }
         composable("homeScreen") { HomeScreen(navController) }
+        composable("doctorCall") { DoctorCall(navController) }
         composable("justDance") {
             Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                 JustDance(
