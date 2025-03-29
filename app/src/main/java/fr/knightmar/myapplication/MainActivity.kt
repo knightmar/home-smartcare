@@ -1,65 +1,30 @@
 package fr.knightmar.myapplication
 
 import IncomingCall
-import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import fr.knightmar.myapplication.ui.theme.pages.DaughterCall
-import fr.knightmar.myapplication.ui.theme.pages.Home
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import fr.knightmar.myapplication.ui.theme.MyApplicationTheme
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.graphics.Color
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import fr.knightmar.myapplication.ui.theme.MyApplicationTheme
+import fr.knightmar.myapplication.ui.theme.pages.DaughterCall
+import fr.knightmar.myapplication.ui.theme.pages.Home
 
 
 class MainActivity : ComponentActivity() {
@@ -71,10 +36,12 @@ class MainActivity : ComponentActivity() {
                     JustDance(
                         modifier = Modifier.padding(innerPadding).padding(10.dp)
                     )
-            //MyApp()
+                    //MyApp()
+                }
+            }
         }
     }
-}
+    }
 
 @Composable
 fun MyApp() {
@@ -276,7 +243,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier, modifierDeux: Modifier
     )
 }
 
-@Preview(showBackground = true)
 @Composable
 fun Main() {
     val navController = rememberNavController()
