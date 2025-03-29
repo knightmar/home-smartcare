@@ -1,3 +1,4 @@
+import android.media.MediaPlayer
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
@@ -15,6 +16,10 @@ import fr.knightmar.myapplication.R
 
 @Composable
 fun IncomingCall(navController: NavController) {
+    val mMediaPlayer = MediaPlayer.create(LocalContext.current, R.raw.call_sound)
+    mMediaPlayer.start()
+
+
     Image(
         painter = painterResource(id = R.drawable.incoming_call),
         contentDescription = "Incoming Call",
@@ -52,7 +57,10 @@ fun IncomingCall(navController: NavController) {
                 )
             }
             Button(
-                onClick = { navController.navigate("daughterCall") },
+                onClick = {
+                    mMediaPlayer.stop();
+                    navController.navigate("daughterCall")
+                },
                 colors = ButtonColors(
                     containerColor = Color.Transparent,
                     contentColor = Color.Transparent,
