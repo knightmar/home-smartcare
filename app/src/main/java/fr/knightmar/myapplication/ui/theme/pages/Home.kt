@@ -37,6 +37,7 @@ fun HomeScreen(navHostController: NavHostController) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        /*
         val colors = listOf(
             Color(0xFFD3F8E2),
             Color(0xFFE4C1F9),
@@ -56,50 +57,209 @@ fun HomeScreen(navHostController: NavHostController) {
         val text_buttons =
             listOf("Calendrier", "Multimédia", "Contacts", "Urgence", "Med Store", "Suivi Med")
         var index = 0
+        */
 
         val fontFamily = FontFamily(Font(R.font.luciole_regular))
 
-
-        for (rowIndex in 0 until 2) { // 3 columns
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceEvenly
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Button(
+                onClick = {},
+                modifier = Modifier
+                    .padding(8.dp)
+                    .weight(1f)
+                    .height(350.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFD3F8E2),
+                    contentColor = Color.Black,
+                    disabledContainerColor = Color(0xFFD3F8E2),
+                    disabledContentColor = Color.Black
+                )
             ) {
-                for (columnIndex in 0 until 3) { // 2 rows
-                    Button(
-                        onClick = { /* TODO */ },
-                        modifier = Modifier
-                            .padding(8.dp)
-                            .weight(1f)
-                            .height(350.dp),
-                        shape = RectangleShape,
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = colors[index],
-                            contentColor = Color.Black,
-                            disabledContainerColor = colors[index],
-                            disabledContentColor = Color.Black
-                        )
-                    ) {
 
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            Image(
-                                painter = painterResource(id = logos[index]),
-                                contentDescription = "Button image",
-                                modifier = Modifier.size(200.dp)
-                            )
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(
+                        painter = painterResource(id = R.drawable.logo_calendrier),
+                        contentDescription = "Button image",
+                        modifier = Modifier.size(200.dp)
+                    )
 
-                            Text(
-                                text = text_buttons[index],
-                                fontSize = 50.sp,
-                                modifier = Modifier.padding(top = 40.dp),
-                                fontFamily = fontFamily
-                            )
-                        }
-
-                    }
-
-                    index++;
+                    Text(
+                        text = "Calendrier",
+                        fontSize = 50.sp,
+                        modifier = Modifier.padding(top = 40.dp),
+                        fontFamily = fontFamily
+                    )
                 }
+
+            }
+
+            Button(
+                onClick = {},
+                modifier = Modifier
+                    .padding(8.dp)
+                    .weight(1f)
+                    .height(350.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFE4C1F9),
+                    contentColor = Color.Black,
+                    disabledContainerColor = Color(0xFFE4C1F9),
+                    disabledContentColor = Color.Black
+                )
+            ) {
+
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(
+                        painter = painterResource(id = R.drawable.logo_multimedia),
+                        contentDescription = "Button image",
+                        modifier = Modifier.size(200.dp)
+                    )
+
+                    Text(
+                        text = "Multimédia",
+                        fontSize = 50.sp,
+                        modifier = Modifier.padding(top = 40.dp),
+                        fontFamily = fontFamily
+                    )
+                }
+
+            }
+
+            Button(
+                onClick = {},
+                modifier = Modifier
+                    .padding(8.dp)
+                    .weight(1f)
+                    .height(350.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFEDCFB3),
+                    contentColor = Color.Black,
+                    disabledContainerColor = Color(0xFFEDCFB3),
+                    disabledContentColor = Color.Black
+                )
+            ) {
+
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(
+                        painter = painterResource(id = R.drawable.logo_contact),
+                        contentDescription = "Button image",
+                        modifier = Modifier.size(200.dp)
+                    )
+
+                    Text(
+                        text = "Contacts",
+                        fontSize = 50.sp,
+                        modifier = Modifier.padding(top = 40.dp),
+                        fontFamily = fontFamily
+                    )
+                }
+
+            }
+        }
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Button(
+                onClick = {},
+                modifier = Modifier
+                    .padding(8.dp)
+                    .weight(1f)
+                    .height(350.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFF694C1),
+                    contentColor = Color.Black,
+                    disabledContainerColor = Color(0xFFF694C1),
+                    disabledContentColor = Color.Black
+                )
+            ) {
+
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(
+                        painter = painterResource(id = R.drawable.logo_urgence),
+                        contentDescription = "Button image",
+                        modifier = Modifier.size(200.dp)
+                    )
+
+                    Text(
+                        text = "Urgence",
+                        fontSize = 50.sp,
+                        modifier = Modifier.padding(top = 40.dp),
+                        fontFamily = fontFamily
+                    )
+                }
+
+            }
+
+            Button(
+                onClick = {},
+                modifier = Modifier
+                    .padding(8.dp)
+                    .weight(1f)
+                    .height(350.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFF4F7BE),
+                    contentColor = Color.Black,
+                    disabledContainerColor = Color(0xFFF4F7BE),
+                    disabledContentColor = Color.Black
+                )
+            ) {
+
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(
+                        painter = painterResource(id = R.drawable.logo_med_store),
+                        contentDescription = "Button image",
+                        modifier = Modifier.size(200.dp)
+                    )
+
+                    Text(
+                        text = "Med Store",
+                        fontSize = 50.sp,
+                        modifier = Modifier.padding(top = 40.dp),
+                        fontFamily = fontFamily
+                    )
+                }
+
+            }
+
+            Button(
+                onClick = { navHostController.navigate("justDance") },
+                modifier = Modifier
+                    .padding(8.dp)
+                    .weight(1f)
+                    .height(350.dp),
+                shape = RectangleShape,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFA9DEF9),
+                    contentColor = Color.Black,
+                    disabledContainerColor = Color(0xFFA9DEF9),
+                    disabledContentColor = Color.Black
+                )
+            ) {
+
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(
+                        painter = painterResource(id = R.drawable.logo_suivi_med),
+                        contentDescription = "Button image",
+                        modifier = Modifier.size(200.dp)
+                    )
+
+                    Text(
+                        text = "Médical",
+                        fontSize = 50.sp,
+                        modifier = Modifier.padding(top = 40.dp),
+                        fontFamily = fontFamily
+                    )
+                }
+
             }
         }
     }

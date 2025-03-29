@@ -2,9 +2,12 @@ package fr.knightmar.myapplication.ui.theme.utils
 
 import android.content.Context
 import android.net.Uri
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
@@ -33,6 +36,7 @@ fun VideoPlayer(context: Context, videoResId: Int) {
             PlayerView(ctx).also { playerView ->
                 playerView.player = player
             }
-        }
+        },
+        modifier = Modifier.size(700.dp)
     )
 }
