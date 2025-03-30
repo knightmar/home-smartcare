@@ -33,7 +33,9 @@ fun VideoPlayer(context: Context, videoResId: Int) {
 
     AndroidView(
         factory = { ctx ->
-            PlayerView(ctx).also { playerView ->
+            PlayerView(ctx)
+                .apply { useController = false }
+                .also { playerView ->
                 playerView.player = player
             }
         },
