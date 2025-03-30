@@ -43,7 +43,7 @@ fun DoctorCall(navController: NavController) {
     ) {
         VideoPlayer(
             context = LocalContext.current,
-            videoResId = R.raw.call_daughter
+            videoResId = R.raw.call_doc
         )
 
         var showDialog by remember { mutableStateOf(false) }
